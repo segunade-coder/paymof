@@ -1,0 +1,35 @@
+.loader-container {
+    display: inline-flex;
+    justify-content: center;
+}
+.loader {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px dashed gainsboro;
+
+    &::after, &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border: 3px solid transparent;
+        border-top-color: darken(green, 10%);
+        border-radius: 50%;
+        left: -3px;
+        top: -3px;
+        animation: spin 1s ease infinite;
+    }
+    &::after{
+        border-top-color: transparent;
+        border-bottom-color: brown;
+    }
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+        
+    }
+}

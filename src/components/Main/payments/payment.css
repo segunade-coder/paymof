@@ -1,0 +1,203 @@
+.__payment {
+  width: 100%;
+  padding-right: 0;
+}
+
+@media only screen and (min-width: 700px) {
+  .__payment {
+    height: 80vh;
+    overflow: auto;
+    padding-right: 1.5rem;
+  }
+}
+
+.__payment h2 {
+  padding: 0rem 0rem .7rem;
+  border-bottom: 1px solid #1b1212;
+}
+
+.__payment form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 2px solid #030616;
+  border-top: 5px solid #030616;
+  border-radius: 10px;
+  position: relative;
+  margin: 1rem auto;
+}
+
+@media only screen and (min-width: 700px) {
+  .__payment form {
+    width: 80%;
+    margin: 1rem auto;
+    padding: 1rem 1rem;
+  }
+}
+
+.__payment form .auto-remark-cont {
+  padding-left: 1rem;
+  padding-right: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media only screen and (min-width: 700px) {
+  .__payment form .auto-remark-cont {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.__payment form .auto-remark-cont span {
+  font-size: 15px;
+}
+
+@media only screen and (min-width: 700px) {
+  .__payment form .auto-remark-cont span {
+    width: 20%;
+  }
+}
+
+.__payment form .auto-remark-cont #auto-remark {
+  background-color: red;
+}
+
+.__payment form div.input-cont {
+  padding: .7rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+@media only screen and (min-width: 700px) {
+  .__payment form div.input-cont {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.__payment form div.input-cont input, .__payment form div.input-cont select, .__payment form div.input-cont textarea {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: .7rem;
+  border: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+  resize: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  width: 100%;
+}
+
+.__payment form div.input-cont input:disabled {
+  background-color: #eee;
+}
+
+.__payment form div.input-cont label {
+  padding: 0 0 .2rem;
+}
+
+@media only screen and (min-width: 700px) {
+  .__payment form div.input-cont label {
+    width: 25%;
+  }
+}
+
+.__payment form .output-names {
+  background-color: #e4e4e4;
+  position: absolute;
+  top: 0;
+  margin-top: 67px;
+  margin-left: 10rem;
+  width: 70.8%;
+}
+
+.__payment form .output-names .names {
+  margin: 0;
+  padding: .1rem .5rem;
+  color: black;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.__payment form .output-names .names:hover {
+  background-color: grey;
+}
+
+.__payment form .output-names .names span {
+  text-transform: capitalize;
+  font-size: small;
+}
+
+.__payment form .btn-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 1rem .5rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: .5rem;
+}
+
+@media only screen and (min-width: 700px) {
+  .__payment form .btn-cont {
+    margin-bottom: 0;
+  }
+}
+
+.__payment form .btn-cont button {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: .5rem 1rem;
+  border: none;
+  background-color: #030616;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.__payment form .btn-cont button:first-child {
+  background-color: #c5d7e5;
+  color: black;
+}
+/*# sourceMappingURL=payment.css.map */

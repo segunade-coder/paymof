@@ -1,0 +1,29 @@
+$primary-Color: #030616;
+$secondary-color: whitesmoke;
+$accent-color:wheat;
+@mixin pad {
+    @media only screen and (min-width:700px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media only screen and (min-width:950px) {
+        @content;
+    }
+}
+@mixin small {
+    @media only screen and (max-width:400px) {
+        @content;
+    }
+}
+.__dashboard {
+
+    p{
+        text-transform: capitalize;
+    }
+    .container {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+    }
+}
