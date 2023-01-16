@@ -43,6 +43,9 @@ class dbQueries {
       });
     });
   };
+  returnConnection = () => {
+    return this.connection
+  };
   getAll = (table) => {
     return new Promise((resolve, reject) => {
       let sql = "SELECT * FROM " + table;
@@ -77,6 +80,32 @@ class dbQueries {
     return new Promise((resolve, reject) => {
       let sql = `SELECT * FROM ${table} WHERE ${columnName} = ?`;
       this.connection.query(sql, [value], (err, data) => {
+        err ? reject(err.sqlMessage) : resolve(data);
+      });
+    });
+  };
+  updateByColumnName = (columnName, value, table) => {
+    if (typeof columnName && typeof value && typeof table !== "string") {
+      return new Promise((resolve, reject) =>
+        reject(new SyntaxError("Must be of type 'string'"))
+      );
+    }
+    return new Promise((resolve, reject) => {
+      let sql = `UPDATE ${table} SET ${columnName} = ?`;
+      this.connection.query(sql, [value], (err, data) => {
+        err ? reject(err.sqlMessage) : resolve(data);
+      });
+    });
+  };
+  delete = (table, id) => {
+    if (typeof id !== 'number' && table !== "string") {
+      return new Promise((resolve, reject) =>
+        reject(new SyntaxError("Must be of type 'string'"))
+      );
+    }
+    return new Promise((resolve, reject) => {
+      let sql = `DELETE FROM ${table} WHERE id = ?`;
+      this.connection.query(sql, [id], (err, data) => {
         err ? reject(err.sqlMessage) : resolve(data);
       });
     });

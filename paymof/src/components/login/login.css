@@ -1,0 +1,304 @@
+.login__cont {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+@media only screen and (min-width: 760px) {
+  .login__cont {
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafafa;
+  }
+}
+.login__cont .inner__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  padding: 0;
+  grid-gap: 1rem;
+  justify-content: center;
+}
+@media only screen and (min-width: 760px) {
+  .login__cont .inner__container {
+    background-color: white;
+    width: 40vw;
+    max-width: 40vw;
+    min-height: 35vw;
+    height: auto;
+    padding-bottom: 1.5rem;
+    justify-content: flex-start;
+    position: static;
+  }
+}
+@media only screen and (min-width: 970px) {
+  .login__cont .inner__container {
+    width: 35vw;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .login__cont .inner__container {
+    padding: 2.5rem 2rem;
+  }
+}
+.login__cont .inner__container form {
+  display: flex;
+  flex-direction: column;
+  font-family: "Calibri Light";
+  padding: 1rem 3rem;
+  color: black;
+  align-items: center;
+}
+@media only screen and (min-width: 760px) {
+  .login__cont .inner__container form {
+    padding: 1rem 2rem;
+  }
+}
+@media only screen and (min-width: 970px) {
+  .login__cont .inner__container form {
+    padding: 1rem 3.5rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .login__cont .inner__container form {
+    padding: 0.5rem 2rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  .login__cont .inner__container form {
+    padding: 0.2rem 0.5rem;
+  }
+}
+.login__cont .inner__container form .new-account {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+.login__cont .inner__container form .new-account a {
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1rem;
+  color: gray;
+}
+@media only screen and (min-width: 760px) {
+  .login__cont .inner__container form .new-account {
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .login__cont .inner__container form .new-account {
+    margin-bottom: 1rem;
+  }
+}
+.login__cont .inner__container form p {
+  margin: 0;
+  text-align: center;
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: small;
+  margin-top: 0.7rem;
+  z-index: 1;
+  position: relative;
+  top: 50px;
+}
+@media only screen and (min-width: 760px) {
+  .login__cont .inner__container form p {
+    position: static;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .login__cont .inner__container form p {
+    top: -20px;
+  }
+}
+.login__cont .inner__container form .login-label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0;
+}
+.login__cont .inner__container form .login-label h1 {
+  margin-top: 3rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 760px) {
+  .login__cont .inner__container form .login-label h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    margin-top: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .login__cont .inner__container form .login-label h1 {
+    margin: 0rem;
+  }
+}
+.login__cont .inner__container form .login-label h4 {
+  font-weight: normal;
+  border-top: 3px solid gray;
+  padding-top: 0.7rem;
+  margin-top: 2rem;
+}
+@media only screen and (min-width: 760px) {
+  .login__cont .inner__container form .login-label h4 {
+    margin-bottom: 0;
+    padding-top: 0.5rem;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+}
+.login__cont .inner__container form .login-label a {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  color: gray;
+  display: none;
+  text-decoration: none;
+}
+@media only screen and (min-width: 760px) {
+  .login__cont .inner__container form .login-label a {
+    display: block;
+  }
+}
+.login__cont .inner__container form h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Calibri Light";
+  font-size: 1rem;
+  margin: 1.5rem;
+}
+@media only screen and (max-width: 400px) {
+  .login__cont .inner__container form h2 {
+    margin: 1rem;
+  }
+}
+.login__cont .inner__container form input, .login__cont .inner__container form select, .login__cont .inner__container form button {
+  padding: 0.8rem 0.5rem 0.5rem 0.2rem;
+  margin-bottom: 25px;
+  border: none;
+  outline: none;
+  width: 70%;
+}
+@media only screen and (min-width: 760px) {
+  .login__cont .inner__container form input, .login__cont .inner__container form select, .login__cont .inner__container form button {
+    width: 80% !important;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .login__cont .inner__container form input, .login__cont .inner__container form select, .login__cont .inner__container form button {
+    width: 100% !important;
+  }
+}
+.login__cont .inner__container form input {
+  border-bottom: 1px solid black;
+  background-color: transparent;
+}
+@media only screen and (max-width: 400px) {
+  .login__cont .inner__container form input {
+    width: 70%;
+  }
+}
+.login__cont .inner__container form input::-moz-placeholder {
+  color: #797878;
+}
+.login__cont .inner__container form input:-ms-input-placeholder {
+  color: #797878;
+}
+.login__cont .inner__container form input::placeholder {
+  color: #797878;
+}
+.login__cont .inner__container form .remember-me {
+  width: 70%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  background-color: transparent;
+}
+@media only screen and (max-width: 400px) {
+  .login__cont .inner__container form .remember-me {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 760px) {
+  .login__cont .inner__container form .remember-me {
+    width: 80%;
+  }
+}
+.login__cont .inner__container form .remember-me input {
+  margin-right: 0.7rem;
+  margin-top: 1px;
+  width: auto !important;
+}
+@media only screen and (min-width: 760px) {
+  .login__cont .inner__container form .remember-me input {
+    margin-top: 2px;
+  }
+}
+.login__cont .inner__container form .remember-me span {
+  width: 100%;
+  font-size: small;
+}
+.login__cont .inner__container form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 60%;
+  margin: 0 auto;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+  transition: all 0.5s ease-in;
+  border: 1px solid black;
+  max-height: 50px;
+  outline: none !important;
+  border: none;
+}
+@media screen and (max-width: 800px) {
+  .login__cont .inner__container form button {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .login__cont .inner__container form button {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .login__cont .inner__container form button {
+    width: 80%;
+  }
+}
+.login__cont .inner__container form select {
+  border: 1px solid gainsboro;
+  height: 40px;
+  text-transform: capitalize;
+  background-color: transparent;
+  padding: 0;
+  color: black;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+}
+@media only screen and (min-width: 760px) {
+  .login__cont .inner__container form select {
+    width: 50%;
+    border-radius: 5px;
+    height: 35px;
+  }
+}
+.login__cont .inner__container form select option {
+  text-transform: capitalize;
+  color: black;
+}/*# sourceMappingURL=login.css.map */

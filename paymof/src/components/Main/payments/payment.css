@@ -1,0 +1,488 @@
+.__payment {
+  width: 100%;
+  padding-right: 0;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 760px) {
+  .__payment {
+    height: auto;
+    margin: 0rem 0 2rem;
+  }
+}
+.__payment h2 {
+  padding: 0rem 0rem 0.5rem;
+}
+.__payment form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  margin: 0.5rem 0;
+  background-color: transparent;
+}
+@media only screen and (min-width: 760px) {
+  .__payment form {
+    width: 100%;
+    margin: 1rem 0 3rem;
+    padding: 0.7rem 0.8rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .__payment form {
+    width: 90%;
+  }
+}
+.__payment form .refresh {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  padding: 0.5rem 1rem 0 0;
+}
+@media only screen and (min-width: 760px) {
+  .__payment form .refresh {
+    padding: 0;
+  }
+}
+.__payment form .pta {
+  padding: 0;
+  padding-left: 0.5rem;
+  font-size: small;
+  gap: 0;
+}
+.__payment form .pta .show-pta {
+  text-decoration: underline;
+  color: rebeccapurple;
+  display: inline;
+  cursor: pointer;
+}
+.__payment form div.input-cont {
+  padding: 0.5rem 1rem;
+  display: flex;
+  font-size: 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  height: auto;
+}
+.__payment form div.input-cont:has(:focus) input:not(:first-child) {
+  border: 1px solid wheat;
+}
+@media only screen and (min-width: 760px) {
+  .__payment form div.input-cont {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.__payment form div.input-cont input, .__payment form div.input-cont select, .__payment form div.input-cont textarea {
+  flex: 1;
+  padding: 0.8rem 0.7rem;
+  border: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+  resize: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  width: 100%;
+}
+@media only screen and (min-width: 760px) {
+  .__payment form div.input-cont input, .__payment form div.input-cont select, .__payment form div.input-cont textarea {
+    padding: 0.7rem;
+  }
+}
+.__payment form div.input-cont select {
+  border-radius: 50px;
+  padding-left: 1rem;
+}
+.__payment form div.input-cont label {
+  padding: 0 0 0.2rem;
+}
+@media only screen and (min-width: 760px) {
+  .__payment form div.input-cont label {
+    width: 25%;
+  }
+}
+.__payment form div.input-cont .input-autocomplete-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0.3rem;
+}
+@media only screen and (min-width: 760px) {
+  .__payment form div.input-cont .input-autocomplete-cont {
+    width: 75%;
+  }
+}
+.__payment form div.input-cont .input-autocomplete-cont .output-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: none;
+  position: absolute;
+  bottom: 0;
+  top: 48px;
+  z-index: 1;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.__payment form div.input-cont .input-autocomplete-cont .output-container .names {
+  border: 1px solid #cfcfcf;
+}
+@media only screen and (min-width: 760px) {
+  .__payment form div.input-cont .input-autocomplete-cont .output-container {
+    top: 40px;
+  }
+}
+@media only screen and (min-width: 950px) {
+  .__payment form div.input-cont .input-autocomplete-cont .output-container .xtra {
+    width: 24%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .__payment form div.input-cont .input-autocomplete-cont .output-container .xtra {
+    width: 0;
+  }
+}
+.__payment form div.input-cont .input-autocomplete-cont .output-container .output-names {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 150px;
+  grid-column: 2;
+}
+.__payment form div.input-cont .input-autocomplete-cont .output-container .output-names .names {
+  margin: 0;
+  padding: 0.1rem 0.5rem;
+  color: black;
+  line-height: 30px;
+  cursor: pointer;
+}
+.__payment form div.input-cont .input-autocomplete-cont .output-container .output-names .names:hover {
+  background-color: #a8a7a7;
+}
+.__payment form div.input-cont .input-autocomplete-cont .output-container .output-names .names span {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.__payment form .btn-cont {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+  flex-direction: column;
+  padding: 0.5rem 2.5rem;
+  gap: 1rem;
+}
+@media only screen and (min-width: 760px) {
+  .__payment form .btn-cont {
+    margin-bottom: 0;
+    gap: 2rem;
+    padding: 1rem 1rem 0.5rem;
+    flex-direction: row;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .__payment form .btn-cont {
+    padding: 0.5rem 1rem;
+  }
+}
+.__payment form .btn-cont button:has(svg) {
+  padding: 0.2rem 1rem;
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (min-width: 760px) {
+  .__payment form .btn-cont button:has(svg) {
+    max-height: 40px;
+  }
+}
+.__payment form .btn-cont button {
+  display: flex;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media only screen and (min-width: 760px) {
+  .__payment form .btn-cont button {
+    padding: 0.5rem 1.5rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 5px;
+  }
+}
+.__payment .set-lesson {
+  padding: 0.2rem 0;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (min-width: 760px) {
+  .__payment .set-lesson {
+    padding: 1.5rem 0;
+  }
+}
+.__payment .set-lesson .modal-body {
+  overflow: hidden;
+  width: 70%;
+  margin-top: 11rem;
+  top: 0;
+  transform: scale(1.1);
+}
+@media only screen and (min-width: 760px) {
+  .__payment .set-lesson .modal-body {
+    width: 320px;
+    border-radius: 10px;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    margin-top: 0.5rem;
+  }
+}
+@media only screen and (min-width: 950px) {
+  .__payment .set-lesson .modal-body {
+    width: 320px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .__payment .set-lesson .modal-body {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .__payment .set-lesson .modal-body {
+    width: 90%;
+  }
+}
+.__payment .set-lesson .modal-body .h3 {
+  font-size: 1rem;
+}
+.__payment .set-lesson .modal-body .content {
+  padding: 0;
+}
+.__payment .set-lesson .modal-body .content form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.__payment .set-lesson .modal-body .content form .info {
+  background-color: #5499dd;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.__payment .set-lesson .modal-body .content form .input-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+@media only screen and (min-width: 760px) {
+  .__payment .set-lesson .modal-body .content form .input-cont {
+    flex-direction: row;
+  }
+}
+.__payment .set-lesson .modal-body .content form .input-cont label {
+  width: 100%;
+}
+@media only screen and (max-width: 400px) {
+  .__payment .set-lesson .modal-body .content form .input-cont label {
+    font-size: small;
+  }
+}
+@media only screen and (min-width: 760px) {
+  .__payment .set-lesson .modal-body .content form .input-cont label {
+    width: 25%;
+  }
+}
+.__payment .set-lesson .modal-body .content form .input-cont input,
+.__payment .set-lesson .modal-body .content form .input-cont textarea {
+  font-size: small;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid gainsboro;
+  outline: none;
+  width: 100%;
+  resize: none;
+}
+.__payment .set-lesson .modal-body .content form .input-cont input:disabled,
+.__payment .set-lesson .modal-body .content form .input-cont textarea:disabled {
+  border: 1px solid dodgerblue;
+}
+@media only screen and (min-width: 760px) {
+  .__payment .set-lesson .modal-body .content form .input-cont input:disabled,
+.__payment .set-lesson .modal-body .content form .input-cont textarea:disabled {
+    padding: 0.6rem;
+  }
+}
+.__payment .set-lesson .modal-body .content form .input-cont select {
+  padding: 0.76rem;
+  border: none;
+  border: 1px solid gainsboro;
+  outline: none;
+  width: 100%;
+  font-size: small;
+}
+.__payment .print-modal {
+  padding: 1rem 0;
+  align-items: flex-start;
+}
+@media only screen and (min-width: 760px) {
+  .__payment .print-modal {
+    padding: 1.5rem 0;
+  }
+}
+.__payment .print-modal .modal-body {
+  overflow: hidden;
+  width: 95%;
+  padding: 15px;
+  border-radius: 5px;
+}
+@media only screen and (min-width: 760px) {
+  .__payment .print-modal .modal-body {
+    max-width: 400px;
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 950px) {
+  .__payment .print-modal .modal-body {
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .__payment .print-modal .modal-body {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .__payment .print-modal .modal-body {
+    width: 90%;
+  }
+}
+.__payment .print-modal .modal-body .content {
+  font-size: 14px;
+}
+@media print {
+  .__payment .print-modal .modal-body .content {
+    font-family: "Open Sans", sans-serif;
+  }
+}
+.__payment .print-modal .modal-body .content h4 {
+  text-align: center;
+  margin: 0.5rem;
+}
+.__payment .print-modal .modal-body .content .img-cont {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.__payment .print-modal .modal-body .content .img-cont img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 300px;
+  height: 200px;
+}
+.__payment .print-modal .modal-body .content .student-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+.__payment .print-modal .modal-body .content .student-info .tbody {
+  display: grid;
+  grid-template-columns: 80px 1fr 0.5fr 80px;
+  font-size: 14px;
+  grid-gap: 0.2rem;
+  grid-column-gap: 0.2rem;
+  border: 1px solid #cccccc;
+  font-size: 14px;
+}
+.__payment .print-modal .modal-body .content .student-info .tbody span {
+  border-right: 1px solid #cccccc;
+  padding: 0.2rem;
+  font-weight: bold;
+}
+.__payment .print-modal .modal-body .content .student-info .tbody .last {
+  border-right: none;
+}
+.__payment .print-modal .modal-body .content .student-info .tbody hr {
+  grid-column: 1/5;
+  margin: 0;
+  padding: 0;
+}
+.__payment .print-modal .modal-body .content .student-info .tbody .span {
+  border-right: 1px solid #cccccc;
+  padding: 0.2rem;
+  font-weight: normal;
+}
+.__payment .print-modal .modal-body .content .student-info .tbody .last {
+  border-right: none;
+}
+.__payment .print-modal .modal-body .content .fee-info {
+  display: flex;
+  flex-direction: column;
+}
+.__payment .print-modal .modal-body .content .fee-info h4 {
+  text-align: center;
+  margin: 0.4rem;
+}
+.__payment .print-modal .modal-body .content .fee-info .tbody {
+  display: grid;
+  grid-template-columns: 63px 50px 1fr;
+  font-size: 14px;
+  grid-column-gap: 0.4rem;
+  border: 1px solid #cccccc;
+  font-size: 14px;
+}
+.__payment .print-modal .modal-body .content .fee-info .tbody span {
+  border-right: 1px solid #cccccc;
+  padding: 0 0.2rem;
+  font-weight: bold;
+}
+.__payment .print-modal .modal-body .content .fee-info .tbody .last {
+  border-right: none;
+}
+.__payment .print-modal .modal-body .content .fee-info .tbody .tr {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 60px 50px 1fr;
+  grid-column-gap: 0.4rem;
+  border: 0;
+  border-top: 1px solid #cccccc;
+}
+.__payment .print-modal .modal-body .content .fee-info .tbody .tr span {
+  border-right: 1px solid #cccccc;
+  padding: 0.3rem;
+  font-weight: normal;
+}
+.__payment .print-modal .modal-body .content .fee-info .tbody .tr .last {
+  border-right: none;
+}
+.__payment .print-modal .modal-body .content .others-cont {
+  margin: 1rem 0 0;
+}
+.__payment .print-modal .modal-body .content .others {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.__payment .print-modal .modal-body .content .others div {
+  font-weight: bold;
+  width: 100px;
+}
+.__payment .print-modal footer {
+  padding: 0;
+  margin: 0;
+}/*# sourceMappingURL=payment.css.map */

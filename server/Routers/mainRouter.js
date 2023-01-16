@@ -7,27 +7,65 @@ require('../conn&apis/prototypes')
 const paymentRoute = require('./paymentRouter')
 const dashboardRoute = require('./dashboardRouter')
 const settingsRoute = require('./settingsRouter')
-let admin = '';
-router.get('/', (req, res) => {
-    // console.log(req.session);
-    db.query(`SELECT * FROM school_cred WHERE school = '${req.session.user.school}' AND admin = '${req.session.user.user}'`)
-    .then(data => {
-        data.length > 0 ? admin = true : admin = false;
-    }).catch(err => console.log(err))
-    if(req.session.user.school){
-        req.session.user.admin = admin;
-        req.session.databaseName = req.session.user.school.replace(/ /g, "_")
-        res.json({
-            status:true,
-            creds:req.session.user,
-        })
-    }
+const usersRoute = require("./usersRouter");
+const feesRoute = require("./feesRouter");
+const recordsRoute = require("./recordsRouter");
+const logErr = require("../conn&apis/logErrors");
+let admin = "";
+const scheduler = require("./scheduler");
+function checkAdmin(req, res, next) {
+  if (req?.session?.user?.admin) next();
+  else res.redirect(301, "/authorization");
+}
+function checkAuth(req, res, next) {
+  if (req?.session?.user) next();
+  else {
+    console.log("not logged in");
+    res.redirect("/");
+  }
+}
 
-}).use('/payment', paymentRoute)
-.use('/dashboard', dashboardRoute)
-.use('/settings', settingsRoute)
-.get('/logout', (req, res) => {
-    res.redirect('http://localhost:3000/login')
-})
+router
+  .get("/", checkAuth, (req, res) => {
+    if (req?.session?.user?.school) {
+      db.query(
+        `SELECT * FROM school_cred WHERE school = '${req?.session?.user?.school}' AND admin = '${req?.session?.user?.user}'`
+      )
+        .then((data) => {
+          data.length > 0 ? (admin = true) : (admin = false);
+        })
+        .catch((err) => {
+          logErr(
+            err,
+            __filename,
+            new Error().stack.match(/(:[\d]+)/)[0].replace(":", "")
+          );
+          res.json({
+            status: "something",
+            message: "Try again or refresh server",
+          });
+        });
+
+      req.session.user.admin = admin;
+      res.json({
+        status: true,
+        creds: req?.session?.user,
+      });
+      scheduler(db, req);
+    } else {
+      console.log("session", req?.session?.user?.school);
+      res.json({
+        status: false,
+        message: "Not logged in",
+      });
+    }
+  })
+  .use("/payment", checkAuth, paymentRoute)
+  .use("/dashboard", checkAuth, dashboardRoute)
+  .use("/users", [checkAuth, checkAdmin], usersRoute)
+  .use("/settings", [checkAuth, checkAdmin], settingsRoute)
+  .use("/fees", checkAuth, feesRoute)
+  .use("/records", checkAuth, recordsRoute);
+
 
 module.exports =  router;

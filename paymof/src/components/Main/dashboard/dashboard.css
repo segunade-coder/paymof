@@ -1,0 +1,20 @@
+.__dashboard {
+  width: 100%;
+}
+@media only screen and (min-width: 760px) {
+  .__dashboard {
+    height: auto;
+    margin: 0rem 0 2rem;
+  }
+}
+.__dashboard p {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  padding-top: 0.3rem;
+  margin-bottom: 0;
+}
+.__dashboard .container {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}/*# sourceMappingURL=dashboard.css.map */

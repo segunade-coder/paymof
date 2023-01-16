@@ -1,0 +1,204 @@
+.__settings {
+  padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+@media only screen and (min-width: 740px) {
+  .__settings {
+    height: auto;
+    margin: 0rem 0 2rem;
+  }
+}
+.__settings .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding-left: 0rem;
+  font-family: "calibri Light";
+  margin-top: 0.4rem;
+}
+@media only screen and (min-width: 740px) {
+  .__settings .container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0.5rem;
+  }
+}
+.__settings .container .classes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  font-size: small;
+}
+@media only screen and (min-width: 740px) {
+  .__settings .container .classes {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 970px) {
+  .__settings .container .classes {
+    width: 80%;
+  }
+}
+.__settings .container .classes .add-class-cont,
+.__settings .container .classes .add-session-cont,
+.__settings .container .classes .add-term-cont,
+.__settings .container .classes .add-payment-method-cont,
+.__settings .container .classes .add-payment-for-cont {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.__settings .container .classes .add-class-cont select,
+.__settings .container .classes .add-session-cont select,
+.__settings .container .classes .add-term-cont select,
+.__settings .container .classes .add-payment-method-cont select,
+.__settings .container .classes .add-payment-for-cont select {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+  resize: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  width: 20%;
+  min-width: 80px;
+}
+.__settings .container .classes .add-class-cont .btn-add-cont,
+.__settings .container .classes .add-session-cont .btn-add-cont,
+.__settings .container .classes .add-term-cont .btn-add-cont,
+.__settings .container .classes .add-payment-method-cont .btn-add-cont,
+.__settings .container .classes .add-payment-for-cont .btn-add-cont {
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+@media only screen and (min-width: 740px) {
+  .__settings .container .classes .add-class-cont .btn-add-cont,
+.__settings .container .classes .add-session-cont .btn-add-cont,
+.__settings .container .classes .add-term-cont .btn-add-cont,
+.__settings .container .classes .add-payment-method-cont .btn-add-cont,
+.__settings .container .classes .add-payment-for-cont .btn-add-cont {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+.__settings .container .classes .add-class-cont button,
+.__settings .container .classes .add-session-cont button,
+.__settings .container .classes .add-term-cont button,
+.__settings .container .classes .add-payment-method-cont button,
+.__settings .container .classes .add-payment-for-cont button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  border: 1px solid wheat;
+  align-items: center;
+  padding: 0.17rem 0.4rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+}
+.__settings .container .fees-cont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media only screen and (min-width: 740px) {
+  .__settings .container .fees-cont {
+    width: auto;
+    padding-right: 0.5rem;
+  }
+}
+@media only screen and (min-width: 970px) {
+  .__settings .container .fees-cont {
+    width: 100%;
+  }
+}
+.__settings .container .fees-cont table {
+  border: 1px solid whitesmoke;
+  border-collapse: collapse;
+  font-size: 14.5px;
+  margin: 0.5rem 0;
+  border-radius: 10px !important;
+}
+@media only screen and (min-width: 740px) {
+  .__settings .container .fees-cont table {
+    font-size: 15px;
+    border: 2px solid whitesmoke;
+  }
+}
+.__settings .container .fees-cont table tr {
+  text-transform: uppercase;
+}
+.__settings .container .fees-cont table tr td,
+.__settings .container .fees-cont table tr th {
+  padding: 0.5rem;
+  text-align: left;
+  font-family: "calibri Light";
+}
+.__settings .container .fees-cont table tr .action-cont {
+  display: flex;
+  padding: 0;
+}
+.__settings .container .fees-cont table tr .action-cont div {
+  margin-left: 1.2rem;
+  cursor: pointer;
+  display: flex;
+}
+.__settings .container .fees-cont table tr .action-cont div button {
+  margin-left: 0.3rem;
+}
+.__settings .container .fees-cont table .loading {
+  vertical-align: baseline;
+  text-align: center;
+}
+.__settings .container .fees-cont table button {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  gap: 0;
+}
+.__settings .container .fees-cont table button:first-child {
+  margin: 0;
+  padding: 0;
+}
+.__settings .container .modal-body {
+  overflow: hidden;
+}
+.__settings .container .modal-body .content .inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.__settings .container .modal-body .content .inputs-container .info {
+  background-color: #5499dd;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.__settings .container .modal-body .content .inputs-container .input-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: small;
+}
+.__settings .container .modal-body .content .inputs-container .input-cont input {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid gainsboro;
+}/*# sourceMappingURL=settings.css.map */

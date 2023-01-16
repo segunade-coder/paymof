@@ -1,0 +1,33 @@
+@mixin pad {
+    @media only screen and (min-width:760px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media only screen and (min-width:950px) {
+        @content;
+    }
+}
+@mixin small {
+    @media only screen and (max-width:400px) {
+        @content;
+    }
+}
+.big-loader-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index:8;
+    left: 0;
+    top: 0;
+    @include pad{
+        align-items: center;
+        z-index: 8;
+        position: absolute;
+        left: 0;
+    }
+
+}

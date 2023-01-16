@@ -1,0 +1,491 @@
+$primary-Color: #030616;
+$secondary-color: whitesmoke;
+$accent-color:wheat;
+@mixin pad {
+    @media only screen and (min-width:760px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media only screen and (min-width:950px) {
+        @content;
+    }
+}
+@mixin small {
+    @media only screen and (max-width:400px) {
+        @content;
+    }
+}
+.__payment {
+    width:100%;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    @include pad{
+        height: auto;
+        // overflow: auto;
+        margin:0rem 0 2rem;
+    }
+
+    h2 {
+        padding: 0rem 0rem .5rem;
+        
+        @include pad{
+            // border-bottom: 1px solid rgb(27, 18, 18);
+        }
+    }
+    form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        // gap: .5rem;
+        border: 1px solid darken($secondary-color, 10%);
+        border-radius: 10px;
+        margin: .5rem 0;
+        background-color: transparent;
+        @include pad{
+            width: 100%;
+            margin: 1rem 0 3rem;
+            padding: .7rem .8rem;
+            // z-index: -1;
+        }
+        @media screen and (min-width:1000px) {
+            width: 90%;
+        }
+        .refresh{
+            display:flex;
+             justify-content:flex-end;
+              cursor:pointer;
+               padding:.5rem 1rem 0 0;
+
+               @include pad{
+                padding: 0;
+               }
+        }
+        .pta{
+            padding: 0;
+            padding-left: .5rem;
+            font-size: small;
+            gap: 0;
+            .show-pta{
+                text-decoration: underline;
+                color: rebeccapurple;
+                display: inline;
+                cursor: pointer;
+               }
+        }
+        div.input-cont {
+            // background-color: red;
+            padding: .5rem 1rem;
+            display: flex;
+            font-size: 15px;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: relative;
+            height: auto;
+
+            &:has(:focus) input:not(:first-child){
+                border: 1px solid $accent-color;
+            }
+            @include pad{
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            input, select, textarea{
+                flex: 1;
+                padding: .8rem .7rem;
+                border: none;
+                border: 1px solid grey;
+                border-radius: 5px;
+                resize: none;
+                appearance: none;
+                outline: none;
+                width: 100%;
+
+                @include pad{
+                    padding: .7rem;
+                }
+            }
+            select {
+                border-radius: 50px;
+                padding-left: 1rem;
+            }
+            
+          
+            label {
+                padding: 0 0 .2rem;
+                @include pad{
+                    width: 25%;
+
+                }
+            }
+            .input-autocomplete-cont{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                gap: .3rem;
+                
+                // input::-ms-value{
+                //     border-bottom-left-radius: 0px;
+                //     border-bottom-right-radius: 0px;
+                //     border-bottom: none;
+                //     outline: none;
+                // }
+                @include pad{
+                width: 75%;
+                }
+                .output-container{
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    background-color: white;
+                    border-bottom-left-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    border-top: none;
+                    position: absolute;
+                    bottom: 0;
+                    top: 48px;
+                    z-index: 1;
+                    height: fit-content;
+                    // padding: .5rem;
+
+                    & .names{
+                        border: 1px solid darken(gainsboro, 5%);
+                          
+                        }
+                    @include pad{
+                        top: 40px;
+                    }
+                    .xtra {
+                        @include desktop{
+                            width: 24%;
+    
+                        }
+                        @include small{
+                            width: 0;
+                        }
+                    }
+                    .output-names {
+                        // background-color: #e4e4e4;
+                        // padding: .2rem 1rem;
+                        // margin:0 auto;  
+                        width: 100%;
+                        height: fit-content;
+                        max-height: 150px;
+                        grid-column: 2;
+                        // padding: .5rem;
+            
+                        .names{
+                            margin: 0;
+                            padding: .1rem .5rem;
+                            color: black;
+                            line-height: 30px;
+                            cursor: pointer;
+                            &:hover{
+                                background-color: #a8a7a7;
+                            }
+            
+                            span {
+                                text-transform: uppercase;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .btn-cont{
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: .5rem;
+            flex-direction: column;
+            padding: .5rem 2.5rem;
+            gap: 1rem;
+            @include pad{
+                margin-bottom: 0;
+                gap: 2rem;
+                padding: 1rem 1rem .5rem;
+                flex-direction: row;
+            }
+            @include small{
+                padding: .5rem 1rem;
+            }
+            button:has(svg){
+                padding: .2rem 1rem;
+                max-height:50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include pad{
+                    max-height: 40px;
+                }
+
+            }
+            button {
+                // flex-grow: 0;
+                display: flex;
+                width: 100%;
+                padding: .8rem 1rem;
+                justify-content: center;
+                align-items: flex-start;
+                // min-height: 50px;
+
+                @include pad{
+                    padding: .5rem 1.5rem;
+                    width: fit-content;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+    .set-lesson {
+        padding: .2rem 0;
+        justify-content: center;
+        align-items: center;
+        @include pad {
+          padding: 1.5rem 0;
+        }
+        .modal-body {
+          overflow: hidden;
+          width: 70%;
+          margin-top: 11rem;
+          top: 0;
+          transform: scale(1.1);
+      
+          @include pad {
+            width: 320px;
+            border-radius: 10px;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            margin-top: 0.5rem;
+          }
+          @include desktop {
+            width: 320px;
+          }
+          @media screen and (max-width: 500px) {
+            width: 90%;
+          }
+          @include small {
+            width: 90%;
+          }
+          .h3{
+            font-size: 1rem;
+          }
+          .content {
+            padding: 0;
+            form {
+              display: flex;
+              flex-direction: column;
+              // padding: .5rem;
+              gap: 0.3rem;
+              border: none;
+              margin: 0;
+              padding: 0;
+      
+              @include pad {
+                // gap: .5rem;
+              }
+              .info {
+                background-color: #5499dd;
+                padding: 1rem;
+                border-radius: 5px;
+              }
+              .input-cont {
+                display: flex;
+                flex-direction: column;
+                gap: 0.3rem;
+      
+                @include pad {
+                  flex-direction: row;
+                }
+                label {
+                  width: 100%;
+                  @include small {
+                    font-size: small;
+                  }
+      
+                  @include pad {
+                    width: 25%;
+                  }
+                }
+                input,
+                textarea {
+                  font-size: small;
+                  padding: 0.6rem;
+                  border: none;
+                  border-radius: 5px;
+                  border: 1px solid gainsboro;
+                  outline: none;
+                  width: 100%;
+                  resize: none;
+      
+                  &:disabled {
+                    // background-color: whitesmoke;
+                    border: 1px solid dodgerblue;
+      
+                    @include pad {
+                      padding: 0.6rem;
+                    }
+                  }
+                }
+                select {
+                  padding: 0.76rem;
+                  border: none;
+                  border: 1px solid gainsboro;
+                  outline: none;
+                  width: 100%;
+                  font-size: small;
+                }
+              }
+            }
+          }
+        }
+    }
+    .print-modal {
+        padding: 1rem 0;
+        align-items: flex-start;
+        @include pad {
+        padding: 1.5rem 0;
+    
+        }
+        .modal-body {
+          overflow: hidden;
+          width: 95%;
+          padding: 15px;
+          border-radius: 5px;
+      
+          @include pad {
+            max-width: 400px;
+            margin-top: 0;
+      
+          }
+          @include desktop {
+            max-width: 400px;
+          }
+          @media screen and (max-width: 500px) {
+            width: 90%;
+          }
+          @include small {
+            width: 90%;
+          }
+          .content {
+            font-size: 14px;
+            @media print {
+              font-family: "Open Sans", sans-serif;
+            }
+            h4{
+              text-align: center;
+              margin: 0.5rem;
+            }
+            .img-cont{
+              display: flex;
+              width: 100%;
+              justify-content: center;align-items: center;
+              img{
+                object-fit: contain;
+                width: 300px;
+                height: 200px;
+              }
+            }
+            .student-info{
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              font-size: 15px;
+              .tbody{
+                display: grid;
+                grid-template-columns: 80px 1fr .5fr 80px;
+                font-size: 14px;
+                grid-gap: .2rem;
+                grid-column-gap: .2rem;
+                border: 1px solid lighten(black, 80%);
+                font-size: 14px;
+                span {
+                  border-right: 1px solid lighten(black, 80%);
+                  padding: .2rem;
+                  font-weight: bold;
+                }
+                .last{
+                  border-right: none;
+                }
+                hr{
+                  grid-column: 1/5;
+                  margin: 0;
+                  padding: 0;
+                }
+    
+                  .span {
+                  border-right: 1px solid lighten(black, 80%);
+                  padding: .2rem;
+                  font-weight: normal;
+                }
+                .last{
+                  border-right: none;
+                }
+              }
+            }
+            .fee-info{
+              display: flex;
+              flex-direction: column;
+      
+              h4{
+                text-align: center;
+                margin: .4rem;
+              }
+              .tbody{
+                display: grid;
+                grid-template-columns: 63px 50px 1fr;
+                font-size: 14px;
+                grid-column-gap: .4rem;
+                border: 1px solid lighten(black, 80%);
+                font-size: 14px;
+                span {
+                  border-right: 1px solid lighten(black, 80%);
+                  padding: 0 .2rem;
+                  font-weight: bold;
+                }
+                .last{
+                  border-right: none;
+                }
+                .tr{
+                  grid-column: 1/4;
+                  display: grid;
+                  grid-template-columns: 60px 50px 1fr;
+                  grid-column-gap: .4rem;
+                  border: 0;
+                  border-top: 1px solid lighten(black, 80%);
+    
+                  span {
+                  border-right: 1px solid lighten(black, 80%);
+                  padding: .3rem;
+                  font-weight: normal;
+                }
+                .last{
+                  border-right: none;
+                }
+                }
+              }
+            }
+            .others-cont{
+              margin: 1rem 0 0;
+            }
+            .others {
+                display: flex;
+                flex-wrap: nowrap;
+              div{
+                font-weight: bold;
+                width: 100px;
+              }
+            }
+          }
+        }
+        footer{
+          padding: 0;
+          margin: 0;
+        }
+      }
+}

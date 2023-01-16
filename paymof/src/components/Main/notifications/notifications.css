@@ -1,0 +1,38 @@
+.__notifications {
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (min-width: 800px) {
+  .__notifications {
+    height: auto;
+    margin: 0rem 0 2rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .__notifications {
+    padding: 0;
+  }
+}
+.__notifications .notification__container .noti__cont .close {
+  position: relative;
+  left: 0;
+}
+.__notifications .notification__container .noti__cont .close svg {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.__notifications .notification__container .noti__cont .title {
+  border-bottom: 1px solid gainsboro;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+.__notifications .notification__container .noti__cont .title svg {
+  margin-right: 0.3rem;
+}
+.__notifications .notification__container .noti__cont .body {
+  text-transform: capitalize;
+}/*# sourceMappingURL=notifications.css.map */

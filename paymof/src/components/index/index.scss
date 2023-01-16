@@ -1,0 +1,472 @@
+$primary-color: #030616;
+$secondary-color: whitesmoke;
+$accent-color:wheat;
+@mixin pad {
+  @media only screen and (min-width: 760px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media only screen and (min-width: 970px) {
+    @content;
+  }
+}
+@mixin small {
+  @media only screen and (max-width: 400px) {
+    @content;
+  }
+}
+
+.__index {
+  .index-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    @include pad {
+      flex-direction: row;
+    }
+
+    &__image-cont {
+      width: 70%;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../../../public/assets/images/hunters-race-MYbhN8KaaEc-unsplash.jpg)
+          no-repeat center;
+      background-size: cover;
+      display: none;
+      justify-content: center;
+      align-items: center;
+
+      @include pad {
+        display: flex;
+      }
+      article {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 60px;
+        }
+        div {
+          display: flex;
+          p {
+            color: white;
+            font-size: 3.5rem;
+            margin: -5px 0;
+            font-family: "Arial";
+            position: relative;
+            letter-spacing: -5px;
+            &::first-letter {
+              color: $primary-color;
+              font-weight: 600;
+              font-size: 5rem;
+            }
+            &::before {
+              content: " ";
+              width: 5px;
+              height: 60px;
+              background-color: #fff;
+              position: absolute;
+              margin: -6px;
+              top: 27px;
+            }
+          }
+        }
+      }
+    }
+    &__text-cont {
+      width: 100%;
+      background-color: rgba(3, 6, 22, 0.9);
+
+      @include pad {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 0.3fr 3fr 2fr;
+      }
+
+      &__header-cont {
+        width: 100%;
+        display: none;
+
+        @include pad {
+          display: block;
+        }
+        header {
+          height: 100%;
+          padding: 0 0.3rem;
+          display: flex;
+
+          .logo {
+            width: 17%;
+            padding: 0.5rem 0rem;
+            img {
+              width: 80px;
+              object-fit: contain;
+            }
+          }
+          section {
+            width: 83%;
+            display: flex;
+            align-items: center;
+            font-family: "Calibri Light";
+
+            div {
+              width: 100%;
+              font-family: "Calibri Light";
+              text-transform: capitalize;
+              font-size: 0.9rem;
+              position: relative;
+              padding-top: 0.5rem;
+              margin-right: 1.5rem;
+              cursor: pointer;
+              position: relative;
+              color: white;
+
+              &:last-child {
+                // width: 100%;
+                display: flex;
+                justify-content: flex-end;
+              }
+              span {
+                position: absolute;
+                color: white;
+                font-size: 3rem;
+                top: 0;
+                top: -30px;
+                left: -17px;
+              }
+              &::before {
+                content: " ";
+                width: 70%;
+                height: 2px;
+                background-color: $accent-color;
+                position: absolute;
+                top: 0;
+                transition: transform 250ms ease-in;
+                transform-origin: left;
+                transform: scaleX(0);
+              }
+              &:hover::before {
+                transform: scaleX(1);
+                transform-origin: center;
+              }
+              &:last-child::before {
+                width: 0;
+              }
+            }
+            div > button {
+              width: 100px;
+              background-color: $accent-color;
+              color: black;
+              border: none;
+              padding: 0.5rem 0.2rem;
+              border-radius: 50px;
+              display: flex;
+              flex-wrap: nowrap;
+              justify-content: center;
+              // margin-left: .9rem;
+              &:hover{
+                border:1px solid $accent-color;
+                background-color: transparent;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+
+      &__img-cont {
+        padding-top: .5rem;
+        background-color: gray;
+        background: linear-gradient(
+            90deg,
+            rgba(6, 11, 39, 0.6),
+            rgba(10, 15, 46, 0.7)
+          ),
+          url(../../../public/assets/images/micheile-dot-com-ZVprbBmT8QA-unsplash.jpg)
+            no-repeat center;
+        background-size: cover;
+        position: relative;
+        height: 100vh;
+        margin: 0;
+        @include pad {
+          display: flex;
+          margin-top: 1rem;
+          height: 100%;
+          padding-top: 3px;
+        }
+        .navigations {
+          position: static;
+          width:95%;
+          display: flex;
+            height: auto;
+            justify-content: flex-start;
+            align-items: flex-end;
+            margin: 0;
+          @include pad {
+            position: absolute;
+            width: 100%;
+            height: 35px;
+            top: 0;
+            top: -5px;
+            // left: 10rem;
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+
+          }
+          nav {
+            width: 60%;
+            background-color: transparent;
+            color: #fff;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-family: "Calibri Light";
+            padding: 0;
+            // margin: 0 auto;
+
+            @include pad {
+                width: 60%;
+              background-color: transparent;
+            justify-content: flex-start;
+            }
+
+            @include small{
+                flex-direction: column;
+            }
+            div {
+              display: flex;
+              width: 100%;
+              align-items: center;
+              justify-content: center;
+              padding: .2em 0rem;
+              height: 100%;
+              text-align: center;
+              font-size: 1rem;
+              cursor: pointer;
+
+              @include pad{
+                font-size: 0.9;
+              }
+            }
+            .active {
+              background-color: transparent;
+              color: $primary-color;
+              border: 1px solid white;
+              @include pad {
+                background-color: $primary-color;
+                color: white;
+              }
+            }
+          }
+        }
+        section {
+          display: flex;
+          flex-direction: column;
+          width: auto;
+          padding-left: 0.5rem;
+          margin-top: 0rem;
+
+
+          @include pad {
+            // padding-left: 2rem;
+            margin-top: 1.5rem;
+            height: 100%;
+          }
+          @include desktop{
+            align-items: center;
+          }
+
+          h1 {
+            text-align: left;
+            color: white;
+            // font-size: 2rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-transform: capitalize;
+            // width: 0%;
+            padding-left: 0rem;
+            margin: 0;
+
+            @include pad {
+              margin: 20px 0;
+              font-size: 2.2rem;
+              width: 70%;
+              min-width: 330px;
+            }
+          }
+          form {
+            margin-top: 1.5rem;
+            display: flex;
+            width: 70%;
+            flex-direction: column;
+            position: relative;
+            // margin-top: -10px;
+            // padding-left: 0rem;
+
+            .err-cont {
+              background-color: lighten(red, 40%);
+              padding: 0.2rem 0.5rem;
+              width: max-content;
+              margin-bottom: 0.3rem;
+              border-radius: 5px;
+              font-family: "Calibri Light";
+              font-size: 0.8rem;
+              position: absolute;
+              top: 0;
+              top: -20px;
+            }
+            .loader-container {
+              justify-content: flex-start;
+              padding-top: 0.3rem;
+            }
+            .school-cont {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              height:40px;
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px;
+              overflow: hidden;
+            }
+            input {
+              padding: .7rem 1.2rem;
+              width: 50%;
+              border: none;
+              outline: none;
+              font-size: 1rem;
+              margin: 0.5rem 0;
+              height: 100%;
+              &::placeholder {
+                font-size: 0.9rem;
+              }
+              &:focus {
+                box-shadow: 0px 0px 20px $primary-color;
+              }
+            }
+            button {
+              max-width: 70px;
+              min-width: 70px;
+              height: 100%;
+              // padding: .6rem 1.2rem;
+              border-top-right-radius: 5px;
+              border-bottom-right-radius: 5px;
+              background-color: rgba(6, 11, 36, 0.9);
+              text-transform: uppercase;
+              cursor: pointer;
+              border: none;
+              color: white;
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-family: 'Calibri Light';
+
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                transition: transform 250ms ease-in;
+                transform-origin: bottom right;
+                transform: scaleX(0);
+              }
+              &:hover::before {
+                transform: scaleX(1);
+                transform-origin: left top;
+              }
+            }
+            .reg-admin {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              .disabled_schoolName {
+                color: black;
+                font-weight: bold;
+                padding: 0.2rem 0;
+                width: fit-content;
+                border-top-left-radius: 50px;
+                border-bottom-left-radius: 50px;
+                padding-left: 10px;
+                background-color: rgba(0,0,0,0.5);
+              }
+              input {
+                width: 53%;
+                margin-bottom: 0.5rem;
+                border-radius: 2px;
+                &:focus {
+                  box-shadow: none;
+                }
+              }
+              button {
+                width: fit-content;
+                padding: .7rem 3rem;
+                // padding-right: 3rem;
+                // padding-left: 3rem;
+                margin: 0.5rem auto 0.7rem auto;
+                background-color: rgb(10, 14, 36);
+                // margin-left: 10px;
+
+                @include pad{
+                  max-width: 98px;
+                  max-height: 38px;
+                  border-radius: 2px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__others {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        section {
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          color: $primary-color;
+          padding: 1rem .2rem;
+        }
+        .our-services {
+          text-align: center;
+          h2 {
+            margin-top: 16px;
+          }
+          .box-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            @include pad {
+              flex-direction: row;
+            }
+            .boxes {
+              width: 90%;
+              padding: 1rem 1rem 1rem;
+              margin: .3rem 0;
+              // box-shadow: 0px 0px 5px rgba(0,0,0, 0.3), 0px 0px 5px rgba(255,255,255, 1);
+              border-radius: 10px;
+              font-family: "Calibri Light";
+              text-align: left;
+
+              @include pad{
+                  margin: 0 0.6rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

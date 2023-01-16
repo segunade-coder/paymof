@@ -1,0 +1,318 @@
+@mixin pad {
+    @media only screen and (min-width:760px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media only screen and (min-width:970px) {
+        @content;
+    }
+}
+@mixin small {
+    @media only screen and (max-width:400px) {
+        @content;
+    }
+}
+
+.login__cont{
+    width: 100%;
+    height: 100%;
+    min-height:100vh;
+    // background: linear-gradient(
+    // 90deg,
+    // rgba(11, 16, 46, 0.5),
+    // rgba(9, 15, 44, 0.7)
+    // ),url(../../../public/assets/images/sean-pollock-PhYq704ffdA-unsplash.jpg) no-repeat center;
+    // background-size: cover;
+    // padding: 5rem;
+    // background-color: rgba(6, 11, 36, 0.7);
+    background-color: white;
+    display: flex;
+    overflow: hidden;
+    // background-color: #333;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    @include pad{
+        justify-content: flex-start;
+        align-items: center;
+        justify-content: center;
+        background-color: darken(white, 2%);
+    }
+    .inner__container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        // min-height: 100vh;
+        border-radius: 7px;
+        padding: 0;
+        grid-gap: 1rem;
+        justify-content: center;
+        // position:relative;
+        // padding-bottom: 3rem;
+
+        @include pad{
+        // background-color: rgba(3, 6, 22, 0.5);
+        background-color: white;
+        width: 40vw;
+        max-width: 40vw;
+        min-height:35vw;
+        // max-height: 85vh;
+        // min-height: 80vh;
+        height: auto;
+        padding-bottom: 1.5rem;
+        justify-content: flex-start;
+        position: static;
+        }
+        @include desktop{
+            width: 35vw;
+
+        }
+        @include small{
+            // justify-content: flex-start;
+            padding: 2.5rem 2rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Calibri Light';
+            padding: 1rem 3rem;
+            color: black;
+            align-items: center;
+            // background-color: red;
+            @include pad{
+                padding: 1rem 2rem;
+            }
+            @include desktop{
+                padding: 1rem 3.5rem;
+            }
+            @include small{
+            padding: .5rem 2rem;
+            }
+            @media screen and (max-width:300px) {
+                padding: .2rem .5rem;
+            }
+            .new-account{
+                    position: absolute;
+                    bottom: 0;
+                    text-align:center;
+                    margin-bottom: .3rem;
+                    a{
+                        font-size: 1rem;
+                        text-decoration: none;
+                        line-height: 1rem;
+                        color: lighten(black,50%);
+                    }
+                    @include pad{
+                    display: none;
+                    }
+                    @include small{
+                        margin-bottom: 1rem;
+                    }
+            }
+            p{
+                margin: 0;
+                text-align: center;
+                padding: .2rem 1rem;
+                border-radius: 5px;
+                width: fit-content;
+                font-size: small;
+                margin-top: .7rem;
+                z-index: 1;
+                position: relative;
+                top: 50px;
+
+                @include pad{
+                    position: static;
+                }
+                @include small{
+                    top: -20px;
+                }
+            }
+            .login-label {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 0;
+                @include small{
+                    // margin-top: 1rem;
+                }
+
+                h1 {
+                    margin-top: 3rem;
+                    // margin-bottom:1rem;
+                    font-weight: 400;
+                    @include pad{
+                        margin: 0;
+                        font-size: 1.8rem;
+                        margin-top: .9rem;
+                        margin-bottom: 1rem;
+                    }
+                    @include small{
+                        margin: 0rem;
+                        // margin-bottom: 3rem;
+                    }
+                }
+                h4{
+                    font-weight: normal;
+                    border-top: 3px solid gray;
+                    padding-top: .7rem;
+                    margin-top: 2rem;
+                    // margin-bottom: -.9rem;
+
+                    @include pad{
+                        // border: none;
+                        margin-bottom: 0;
+                        padding-top: .5rem;
+                        font-size: 1.2rem;
+                        margin-top: .5rem;
+                    }
+                }
+                a {
+                    font-size: .8rem;
+                    line-height: 1rem;
+                    color: lighten(black,50%);
+                    display: none;
+                    text-decoration: none;
+                    @include pad{
+                        display: block;
+                    }
+                }
+            }
+
+            h2 {
+                text-transform: uppercase;
+                text-align: center;
+                font-family: 'Calibri Light';
+                font-size: 1rem;
+                margin: 1.5rem;
+
+                @include small{
+                    margin: 1rem;
+                }
+            }
+            input, select, button {
+                padding: .8rem .5rem .5rem .2rem;
+                margin-bottom: 25px;
+                border: none;
+                outline: none;
+                width: 70%;
+
+                @include pad{
+                    width: 80% !important;
+                }
+                @include small{
+                    width: 100% !important;
+                }
+            }
+            input {
+                border-bottom: 1px solid black;
+                background-color: transparent;
+                // color: #eee;
+
+                @include small {
+                    width: 70%;
+                }
+                &::placeholder{
+                    color: #797878;
+
+                }
+                &:focus{
+                    &::placeholder{
+                        // color: #fff;
+    
+                    }
+                }
+            }
+            .remember-me{
+                width: 70%;
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: flex-start;
+                background-color: transparent;
+
+                @include small{
+                    width: 100%;
+                }
+                @include pad{
+                    width: 80%;
+                }
+                input{
+                    margin-right: .7rem;
+                    margin-top: 1px;
+                    width: auto !important;
+                    @include pad{
+                        margin-top: 2px;
+                    }
+                }
+                span{
+                    width: 100%;
+                    font-size: small;
+                }
+            }
+            button {
+                // background-color: transparent;
+                // color: whitesmoke;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                width: 60%;
+                margin: 0 auto;
+                padding: .8rem 2rem;
+                // border-radius: 50px;
+                margin-top: 1rem;
+                transition: all .5s ease-in;
+                border: 1px solid black;
+                max-height: 50px;
+                outline: none !important;
+                // width: 70% !important;
+                // background-color: #c5d7e5;
+                border: none;
+                
+                @include pad{
+                    // width: fit-content !important;
+                }
+                @media screen and (max-width:800px) {
+                    width: 40%;
+                }
+                @media screen and (max-width:600px) {
+                    width: 50%;
+                }
+                @include small{
+                    width: 80%;
+                }
+                
+            }
+            select {
+                border: 1px solid gainsboro;
+                height: 40px;
+                text-transform: capitalize;
+                background-color: transparent;
+                padding: 0;
+                color: black;
+                border-radius: 50px;
+                padding: .5rem 1rem;
+
+                @include pad{
+                    width: 50%;
+                    border-radius: 5px;
+                    height: 35px;
+
+                }
+                // &:focus{
+                //     background-color: rgba(6, 11, 36, 0.9);
+                // }
+                option {
+                    text-transform:capitalize;
+                    color: black;
+                    // background-color: whitesmoke;
+                    
+                }
+            }
+        
+        }
+    }
+}

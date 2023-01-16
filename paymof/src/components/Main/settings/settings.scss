@@ -1,0 +1,211 @@
+@mixin pad {
+  @media only screen and (min-width: 740px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media only screen and (min-width: 970px) {
+    @content;
+  }
+}
+@mixin small {
+  @media only screen and (max-width: 400px) {
+    @content;
+  }
+}
+
+.__settings {
+  padding: 0rem;
+  display: flex;
+  // height: 100%;
+  flex-direction: column;
+  gap: 0.3rem;
+  @include pad {
+    height: auto;
+    // overflow: auto;
+    margin:0rem 0 2rem;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 100%;
+    padding-left: 0rem;
+    font-family: "calibri Light";
+    margin-top: 0.4rem;
+
+    @include pad {
+      // overflow: auto;
+      // height: 100%;
+    }
+
+    @include pad {
+      display: flex;
+      flex-direction: row;
+      // flex-wrap: nowrap;
+      padding-left: 0.5rem;
+    }
+    @include desktop {
+      // grid-template-columns:1fr 1fr;
+    }
+    .classes {
+      // padding: .7rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+      font-size: small;
+      @include pad {
+        width: 50%;
+      }
+      @include desktop {
+        width: 80%;
+      }
+      .add-class-cont,
+      .add-session-cont,
+      .add-term-cont, 
+      .add-payment-method-cont, 
+      .add-payment-for-cont{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        select {
+          flex: 1;
+          padding: 0.5rem;
+          border: none;
+          border: 1px solid grey;
+          border-radius: 5px;
+          resize: none;
+          appearance: none;
+          outline: none;
+          width: 20%;
+          min-width: 80px;
+        }
+        .btn-add-cont {
+          width: 40%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          cursor: pointer;
+          // margin-left: .7rem;
+          @include pad {
+            width: fit-content;
+          }
+        }
+        button {
+          width: fit-content;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          border: 1px solid wheat;
+          // justify-content: space-around;
+          align-items: center;
+          padding: 0.17rem 0.4rem;
+          margin: 0 0.5rem;
+          border-radius: 5px;
+        }
+      }
+    }
+    .fees-cont {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      @include pad {
+        width: auto;
+        // display: block;
+        padding-right: .5rem;
+      }
+      @include desktop{
+        width:100%
+      }
+      table {
+        border:1px solid whitesmoke;
+        border-collapse: collapse;
+        // width: 85%;
+        font-size: 14.5px;
+        margin: 0.5rem 0;
+        border-radius: 10px !important;
+        @include pad {
+          font-size: 15px;
+        border: 2px solid whitesmoke;
+        }
+        tr {
+          // line-height: 10px;
+          text-transform: uppercase;
+
+          td,
+          th {
+            padding: 0.5rem;
+            text-align: left;
+            font-family: "calibri Light";
+
+          }
+          .action-cont {
+            display: flex;
+            padding: 0;
+
+            div {
+              margin-left: 1.2rem;
+              cursor: pointer;
+              display: flex;
+              button {
+                margin-left: 0.3rem;
+              }
+            }
+          }
+        }
+        .loading {
+          vertical-align: baseline;
+          text-align: center;
+
+          // justify-content: center;
+        }
+        button {
+          width: 100%;
+          height: 100%;
+          flex: 1;
+          border: none;
+          background-color: transparent;
+          outline: none;
+          gap: 0;
+          &:first-child {
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .modal-body {
+      overflow: hidden;
+      .content {
+        .inputs-container {
+          display: flex;
+          flex-direction: column;
+          // padding: .5rem;
+          gap: 0.5rem;
+
+          .info {
+            background-color: #5499dd;
+            padding: 1rem;
+            border-radius: 5px;
+          }
+          .input-cont {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            font-size: small;
+
+            input {
+              padding: 0.6rem;
+              border: none;
+              border-radius: 5px;
+              border: 1px solid gainsboro;
+            }
+          }
+        }
+      }
+    }
+  }
+}

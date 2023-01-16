@@ -4,20 +4,30 @@ const conn = require("../conn&apis/conn"); // connection module made to apache s
 const dbQueries = require("../conn&apis/mysqlApi"); // mysql api module
 const db = new dbQueries(conn);
 require('../conn&apis/prototypes')
+const logErr = require("../conn&apis/logErrors");
 
-router.get('/', (req, res) => {
-    // console.log(req.session);
-    let {school} = req.query;
-    if(school){
-    school = school.replace(/-/g, "_")
-    db.getAll(`${school}_students`).then(data => {
-        // console.log(data.length)
+router.get("/", (req, res) => {
+  if (req.session.user) {
+    db.query(
+      `SELECT COUNT(*) AS count FROM ${req?.session?.databaseName}_students`
+    )
+      .then((data) => {
         return res.json({
-            status:true,
-            message:data.length,
-        })
-    }).catch(err => console.log(err, 'from dashboard'))
-}
-    
-})
+          status: true,
+          message: data[0].count,
+        });
+      })
+      .catch((err) => {
+        logErr(
+          err,
+          __filename,
+          new Error().stack.match(/(:[\d]+)/)[0].replace(":", "")
+        );
+        res.json({
+          status: false,
+          message: "something went wrong. Try refreshing or restarting",
+        });
+      });
+  }
+});
 module.exports =  router;

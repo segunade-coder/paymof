@@ -1,0 +1,176 @@
+.__users {
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (min-width: 760px) {
+  .__users {
+    height: auto;
+    margin: 0rem 0 2rem;
+  }
+}
+.__users table {
+  border: 2px solid #eee;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14.5px;
+  margin: 0.5rem 0;
+  padding: 2rem;
+}
+@media only screen and (min-width: 760px) {
+  .__users table {
+    font-size: 15px;
+    width: auto;
+  }
+}
+.__users table tr {
+  text-transform: uppercase;
+}
+.__users table tr th:last-child {
+  text-align: center;
+}
+.__users table tr td,
+.__users table tr th {
+  padding: 0.5rem;
+  text-align: left;
+  font-family: "calibri Light";
+  vertical-align: middle;
+}
+.__users table tr td:first-child {
+  width: 50%;
+  border: none;
+  border-bottom: 2px solid whitesmoke;
+}
+@media only screen and (min-width: 760px) {
+  .__users table tr td:first-child {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 970px) {
+  .__users table tr td:first-child {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 760px) {
+  .__users table tr td:nth-child(2) {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 0.5rem;
+  }
+}
+.__users table tr .action-cont {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 0.7rem;
+}
+@media only screen and (min-width: 760px) {
+  .__users table tr .action-cont {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    gap: 1rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .__users table tr .action-cont {
+    justify-content: center;
+  }
+}
+.__users table tr .action-cont div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.4);
+  padding: 0.3rem;
+  border-radius: 3px;
+  cursor: pointer;
+  flex-wrap: nowrap;
+}
+@media only screen and (min-width: 760px) {
+  .__users table tr .action-cont div {
+    min-width: 85px;
+    max-width: 85px;
+  }
+}
+.__users table tr .action-cont div span {
+  display: none;
+}
+@media only screen and (min-width: 760px) {
+  .__users table tr .action-cont div span {
+    display: inline;
+  }
+}
+.__users table tr .action-cont div svg {
+  margin-left: 0rem;
+}
+@media only screen and (min-width: 760px) {
+  .__users table tr .action-cont div svg {
+    margin-left: 0.3rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .__users table tr .action-cont div svg {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .__users table tr .action-cont div svg {
+    margin-left: 0;
+  }
+}
+.__users .add-btn {
+  display: flex;
+  justify-content: flex-start;
+}
+.__users .add-btn button {
+  padding: 0.3rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.__users .modal-body {
+  overflow: hidden;
+  width: 70%;
+}
+@media only screen and (min-width: 760px) {
+  .__users .modal-body {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .__users .modal-body {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .__users .modal-body {
+    width: 90%;
+  }
+}
+.__users .modal-body .content .inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.__users .modal-body .content .inputs-container .info {
+  background-color: #5499dd;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.__users .modal-body .content .inputs-container .input-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: small;
+}
+.__users .modal-body .content .inputs-container .input-cont input {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid gainsboro;
+  outline: none;
+}/*# sourceMappingURL=users.css.map */
